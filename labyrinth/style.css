@@ -1,0 +1,91 @@
+/* shared look for every page */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #eee;
+  font-family: "Courier New", monospace;
+}
+
+/* p5 puts the canvas inside <main>; this centers it */
+main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+canvas {
+  display: block;
+}
+
+/* all text sits in the top-left corner, away from the edges */
+header,
+.start {
+  position: fixed;
+  top: 48px;
+  left: 56px;
+  z-index: 10;
+  text-align: left;
+  mix-blend-mode: difference;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+header p {
+  margin: 6px 0 0;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+nav {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+}
+
+a:hover {
+  font-style: italic;
+}
+
+/* start page */
+.start {
+  max-width: 460px;
+  line-height: 1.6;
+}
+
+.start h1 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  font-weight: normal;
+}
+
+.start p {
+  margin: 0;
+}
+
+/* blinking cursor (time-based behavior on the start page) */
+.cursor {
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* dead end message */
+.stuck {
+  margin-top: 20px !important;
+  opacity: 0.6;
+}
